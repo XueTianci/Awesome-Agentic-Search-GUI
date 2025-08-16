@@ -31,11 +31,10 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 - reward: Model-based  
 
 **TLDR**:  
-Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) has led to substantial breakthroughs, primarily driven by human-labeled data. However, these models often struggle with novel and specialized software, particularly in scenarios lacking human annotations. To address this challenge, we propose SEAgent, an agentic self-evolving framework enabling CUAs to autonomously evolve through interactions with unfamiliar software. Specifically, SEAgent empowers computer-use agents to autonomously master novel software environments via experiential learning, where agents explore new software, learn through iterative trial-and-error, and progressively tackle auto-generated tasks organized from simple to complex. To achieve this goal, we design a World State Model for step-wise trajectory assessment, along with a Curriculum Generator that generates increasingly diverse and challenging tasks. The agent's policy is updated through experiential learning, comprised of adversarial imitation of failure actions and Group Relative Policy Optimization (GRPO) on successful ones. Furthermore, we introduce a specialist-to-generalist training strategy that integrates individual experiential insights from specialist agents, facilitating the development of a stronger generalist CUA capable of continuous autonomous evolution. This unified agent ultimately achieves performance surpassing ensembles of individual specialist agents on their specialized software. We validate the effectiveness of SEAgent across five novel software environments within OS-World. Our approach achieves a significant improvement of 23.2% in success rate, from 11.3% to 34.5%, over a competitive open-source CUA, i.e., UI-TARS.  
+Recent advancements in LLM-based agents have demonstrated remarkable capabilities in handling complex, knowledge-intensive tasks by integrating external tools. Among diverse choices of tools, search tools play a pivotal role in accessing vast external knowledge. However, open-source agents still fall short of achieving expert-level Search Intelligence, the ability to resolve ambiguous queries, generate precise searches, analyze results, and conduct thorough exploration. Existing approaches fall short in scalability, efficiency, and data quality. For example, small turn limits in existing online RL methods, e.g. <=10, restrict complex strategy learning. This paper introduces ASearcher, an open-source project for large-scale RL training of search agents. Our key contributions include: (1) Scalable fully asynchronous RL training that enables long-horizon search while maintaining high training efficiency. (2) A prompt-based LLM agent that autonomously synthesizes high-quality and challenging QAs, creating a large-scale QA dataset. Through RL training, our prompt-based QwQ-32B agent achieves substantial improvements, with 46.7% and 20.8% Avg@4 gains on xBench and GAIA, respectively. Notably, our agent exhibits extreme long-horizon search, with tool calls exceeding 40 turns and output tokens exceeding 150k during training time. With a simple agent design and no external LLMs, ASearcher-Web-QwQ achieves Avg@4 scores of 42.1 on xBench and 52.8 on GAIA, surpassing existing open-source 32B agents. We open-source our models, training data, and codes in this https URL. 
 
 </details>
 
----
 
 ## GUI Agent
 
@@ -52,8 +51,6 @@ Vision-language models have demonstrated impressive capabilities as computer-use
 
 </details>
 
----
-
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2508.03923">CoAct-1: Computer-using Agents with Coding as Actions</a>
@@ -69,7 +66,6 @@ Autonomous agents that operate computers via Graphical User Interfaces (GUIs) of
 
 </details>
 
----
 
 <details>
 <summary>
@@ -87,7 +83,6 @@ This paper presents MagicGUI, a foundational mobile GUI agent designed to addres
 
 </details>
 
----
 
 </details>
 
@@ -109,7 +104,6 @@ Vision-language models have demonstrated impressive capabilities as computer-use
 
 </details>
 
----
 
 <details>
 <summary>
@@ -129,7 +123,6 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 
 </details>
 
----
 
 <details>
 <summary>
@@ -148,7 +141,6 @@ Recently, there has been a surge of vision-based GUI agents designed to automate
 
 </details>
 
----
 
 <details>
 <summary>
@@ -167,7 +159,6 @@ LLM-based web agents have recently made significant progress, but much of it has
 
 </details>
 
----
 
 <details>
 <summary>
@@ -187,7 +178,6 @@ Training large language models (LLMs) as interactive agents for controlling grap
 
 </details>
 
----
 
 <details>
 <summary>
@@ -207,7 +197,6 @@ While reinforcement learning (RL) has demonstrated remarkable success in enhanci
 
 </details>
 
----
 
 <details>
 <summary>
@@ -227,7 +216,6 @@ The rapid advancement of large Vision-Language Models (VLMs) has propelled the d
 
 </details>
 
----
 
 <details>
 <summary>
@@ -245,7 +233,6 @@ Scaling up high-quality trajectory data has long been a critical bottleneck for 
 
 </details>
 
----
 
 <details>
 <summary>
