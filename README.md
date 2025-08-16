@@ -86,7 +86,6 @@ This paper presents MagicGUI, a foundational mobile GUI agent designed to addres
 
 </details>
 
----
 
 <details>
 <summary>
