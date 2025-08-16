@@ -70,7 +70,6 @@ Autonomous agents that operate computers via Graphical User Interfaces (GUIs) of
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2508.03700">MagicGUI: A Foundational Mobile GUI Agent with Scalable Data Pipeline and Reinforcement Fine-tuning</a>
-  <a href="https://github.com/xlang-ai/OpenCUA"><img src="https://img.shields.io/github/stars/xlang-ai/OpenCUA?style=social" alt="GitHub Stars"/></a>
 </summary>
 
 - Date: Aug, 2025  
