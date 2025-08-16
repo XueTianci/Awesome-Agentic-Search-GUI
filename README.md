@@ -25,13 +25,13 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 | WebDancer | ✔️ | GRPO | QwQ-32B |  | GAIA | Rule-based |
 
 
-## Computer-Use Agent
+## GUI Agent
 
 | Legend | ✔️ Implemented | — Not present |
 |--------|:--------------:|:-------------:|
 
 | Title | Date | SFT | RL | Base Model | Environment | Evaluation | reward |
-|------------------------------|---|:-:|:-:|---|---|---|---|
+|-------------------------------------------------------------------------------------|---|---|---|---|---|---|-----|
 | [SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience](https://www.arxiv.org/pdf/2508.04700) [![GitHub Stars](https://img.shields.io/github/stars/SunzeY/SEAgent?style=social)](https://github.com/SunzeY/SEAgent)| Aug, 2025 | ✔️ | ✔️ GRPO | UI-TARS-7B-DPO | Computer | OSWorld | model-based |
 | [OpenCUA: Open Foundations for Computer-Use Agents](https://arxiv.org/abs/2508.09123) [![GitHub Stars](https://img.shields.io/github/stars/xlang-ai/OpenCUA?style=social)](https://github.com/xlang-ai/OpenCUA)| Aug, 2025 | ✔️ | — |  Qwen2.5-VL-7B-Instruction | Computer | OSWorld-Verified, WindowsAgentArena | — | — |
 | [WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning](https://arxiv.org/abs/2411.02337) [![GitHub Stars](https://img.shields.io/github/stars/THUDM/WebRL?style=social)](https://github.com/THUDM/WebRL) | Nov, 2024 | — | ✔️ Curriculum-RL | Llama-3.1-8B, GLM-4-9B | Web | WebArena-Lite | model-based |
