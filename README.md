@@ -14,8 +14,100 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 1. [Agentic Search](#agentic-search)  
 2. [GUI Agent](#gui-agent)
 
-
 ## Agentic Search
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2503.09516">Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning</a>
+  <a href="https://github.com/PeterGriffinJin/Search-R1"><img src="https://img.shields.io/github/stars/PeterGriffinJin/Search-R1?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Aug, 2025  
+- Env: API 
+- RL: GRPO, PPO
+- Base Model: Qwen-2.5-3B (Base/Instruct), Qwen-2.5-7B (Base/Instruct) 
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based  
+
+**TLDR**:  
+Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieval. Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function. Experiments on seven question-answering datasets show that Search-R1 improves performance by 41% (Qwen2.5-7B) and 20% (Qwen2.5-3B) over various RAG baselines under the same setting. This paper further provides empirical insights into RL optimization methods, LLM choices, and response length dynamics in retrieval-augmented reasoning. The code and model checkpoints are available at this https URL. 
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2504.03160">DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments</a>
+  <a href="https://github.com/GAIR-NLP/DeepResearcher"><img src="https://img.shields.io/github/stars/GAIR-NLP/DeepResearcher?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Apr, 2025  
+- Env: API
+- RL: GRPO
+- Base Model: Qwen2.5-7B-Instruct
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based 
+
+**TLDR**:  
+Large Language Models (LLMs) equipped with web search capabilities have demonstrated impressive potential for deep research tasks. However, current approaches predominantly rely on either manually engineered prompts (prompt engineering-based) with brittle performance or reinforcement learning within controlled Retrieval-Augmented Generation (RAG) environments (RAG-based) that fail to capture the complexities of real-world interaction. In this paper, we introduce DeepResearcher, the first comprehensive framework for end-to-end training of LLM-based deep research agents through scaling reinforcement learning (RL) in real-world environments with authentic web search interactions. Unlike RAG-based approaches that assume all necessary information exists within a fixed corpus, our method trains agents to navigate the noisy, unstructured, and dynamic nature of the open web. We implement a specialized multi-agent architecture where browsing agents extract relevant information from various webpage structures and overcoming significant technical challenges. Extensive experiments on open-domain research tasks demonstrate that DeepResearcher achieves substantial improvements of up to 28.9 points over prompt engineering-based baselines and up to 7.2 points over RAG-based RL agents. Our qualitative analysis reveals emergent cognitive behaviors from end-to-end RL training, including the ability to formulate plans, cross-validate information from multiple sources, engage in self-reflection to redirect research, and maintain honesty when unable to find definitive answers. Our results highlight that end-to-end training in real-world web environments is not merely an implementation detail but a fundamental requirement for developing robust research capabilities aligned with real-world applications.
+</details>
+
+
+
+<details> <summary> <a href="https://arxiv.org/abs/2504.21776">WebThinker: Empowering Large Reasoning Models with Deep Research Capability</a> <a href="https://github.com/RUC-NLPIR/WebThinker"><img src="https://img.shields.io/github/stars/RUC-NLPIR/WebThinker?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: Apr, 2025. 
+- Env: Browser
+- RL: Online DPO
+- Base Model: QwQ-32B and DeepSeek-R1 distilled
+- Benchmark: GPQA, GAIA, WebWalkerQA, HLE. 
+- reward: Preferences built from reasoning correctness, tool usage, and final outputs.
+
+**TLDR**: Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate web pages, and draft research reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabling LRMs to dynamically search, navigate, and extract information from the web when encountering knowledge gaps. It also employs an Autonomous Think-Search-and-Draft strategy, allowing the model to seamlessly interleave reasoning, information gathering, and report writing in real time. To further enhance research tool utilization, we introduce an RL-based training strategy via iterative online Direct Preference Optimization (DPO). Extensive experiments on complex reasoning benchmarks (GPQA, GAIA, WebWalkerQA, HLE) and scientific report generation tasks (Glaive) demonstrate that WebThinker significantly outperforms existing methods and strong proprietary systems. Our approach enhances LRM reliability and applicability in complex scenarios, paving the way for more capable and versatile deep research systems. 
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2505.04588">ZeroSearch: Incentivize the Search Capability of LLMs without Searching</a>
+  <a href="https://github.com/Alibaba-NLP/ZeroSearch"><img src="https://img.shields.io/github/stars/Alibaba-NLP/ZeroSearch?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: May, 2025  
+- Env: LLM Synthesized
+- RL: REINFORCE, PPO, GRPO
+- Base Model: Qwen-2.5-3B(Base/Instruct), Qwen-2.5-7B (Base/Instruct), Llama-3.2-3B (Base/Instruct)
+- Benchmark: Single-Hop QA, Multi-Hop QA
+
+**TLDR**: 
+Effective information searching is essential for enhancing the reasoning and generation capabilities of large language models (LLMs). Recent research has explored using reinforcement learning (RL) to improve LLMs' search capabilities by interacting with live search engines in real-world environments. While these approaches show promising results, they face two major challenges: (1) Uncontrolled Document Quality: The quality of documents returned by search engines is often unpredictable, introducing noise and instability into the training process. (2) Prohibitively High API Costs: RL training requires frequent rollouts, potentially involving hundreds of thousands of search requests, which incur substantial API expenses and severely constrain scalability. To address these challenges, we introduce ZeroSearch, a novel RL framework that incentivizes the capabilities of LLMs to use a real search engine with simulated searches during training. Our approach begins with lightweight supervised fine-tuning to transform the LLM into a retrieval module capable of generating both useful and noisy documents in response to a query. During RL training, we employ a curriculum-based rollout strategy that incrementally degrades the quality of generated documents, progressively eliciting the model's reasoning ability by exposing it to increasingly challenging retrieval scenarios. Extensive experiments demonstrate that ZeroSearch effectively incentivizes the search capabilities of LLMs using a 3B LLM as the retrieval module. Remarkably, a 7B retrieval module achieves comparable performance to the real search engine, while a 14B retrieval module even surpasses it. Furthermore, it generalizes well across both base and instruction-tuned models of various parameter sizes and is compatible with a wide range of RL algorithms.
+</details>
+
+
+<details> <summary> <a href="https://arxiv.org/abs/2505.16834">SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a> <a href="https://github.com/RUCAIBox/SimpleDeepSearcher"><img src="https://img.shields.io/github/stars/RUCAIBox/SimpleDeepSearcher?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: May, 2025  
+- Env: Search API 
+- SFT only on 871 samples 
+- Base Model: Qwen-2.5-7B, Qwen-2.5-32B, DeepSeek-Distilled-Qwen-2.5-32B, QwQ-32B. 
+- Benchmark: Multi-Hop QA, FRAMES, GAIA 
+
+**TLDR**: Retrieval-augmented generation (RAG) systems have advanced large language models (LLMs) in complex deep search scenarios requiring multi-step reasoning and iterative information retrieval. However, existing approaches face critical limitations that lack high-quality training trajectories or suffer from the distributional mismatches in simulated environments and prohibitive computational costs for real-world deployment. This paper introduces SimpleDeepSearcher, a lightweight yet effective framework that bridges this gap through strategic data engineering rather than complex training paradigms. Our approach synthesizes high-quality training data by simulating realistic user interactions in live web search environments, coupled with a multi-criteria curation strategy that optimizes the diversity and quality of input and output side. Experiments on five benchmarks across diverse domains demonstrate that SFT on only 871 curated samples yields significant improvements over RL-based baselines. Our work establishes SFT as a viable pathway by systematically addressing the data-scarce bottleneck, offering practical insights for efficient deep search systems. 
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2505.22501">EvolveSearch: An Iterative Self-Evolving Search Agent</a>
+</summary>
+
+- Date: May, 2025  
+- Env: API 
+- RL: Iterative self-evolution with SFT and GRPO
+- Base Model: Qwen2.5-7B-Instruct
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based 
+
+**TLDR**:  
+The rapid advancement of large language models (LLMs) has transformed the landscape of agentic information seeking capabilities through the integration of tools such as search engines and web browsers. However, current mainstream approaches for enabling LLM web search proficiency face significant challenges: supervised fine-tuning struggles with data production in open-search domains, while RL converges quickly, limiting their data utilization efficiency. To address these issues, we propose EvolveSearch, a novel iterative self-evolution framework that combines SFT and RL to enhance agentic web search capabilities without any external human-annotated reasoning data. Extensive experiments on seven multi-hop question-answering (MHQA) benchmarks demonstrate that EvolveSearch consistently improves performance across iterations, ultimately achieving an average improvement of 4.7\% over the current state-of-the-art across seven benchmarks, opening the door to self-evolution agentic capabilities in open web search domains.
+</details>
+
 
 <details> <summary> <a href="https://arxiv.org/html/2506.15841v1">MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents</a> <a href="https://github.com/MIT-MI/MEM1"><img src="https://img.shields.io/github/stars/MIT-MI/MEM1?style=social" alt="GitHub Stars"/></a> </summary>
 
@@ -43,6 +135,40 @@ Despite improvements by length extrapolation, efficient attention and memory mod
 </details>
 
 <details>
+<summary>
+  <a href="https://arxiv.org/abs/2507.02592">WebSailor: Navigating Super-human Reasoning for Web Agent</a>
+  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Jul, 2025  
+- Env: API 
+- RL: GRPO with Cold Start
+- Base Model: Qwen-2.5-3B, Qwen-2.5-7B, Qwen-2.5-32B, Qwen-2.5-72B.
+- Benchmark: BrowseComp, Xbench-DeepSearch, GAIA
+- reward: Rule-based 
+
+**TLDR**:  
+Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2507.15061">WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization</a>
+  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Jul, 2025  
+- Env: API 
+- RL: GRPO with Cold Start
+- Base Model: QwQ-32B, Qwen-2.5-32B, Qwen-2.5-72B.
+- Benchmark: WebWalkerQA, GAIA
+- reward: Rule-based
+
+**TLDR**:  
+The advent of Large Language Model (LLM)-powered agents has revolutionized artificial intelligence by enabling solutions to complex, open-ended tasks through web-based information-seeking (IS) capabilities. The scarcity of high-quality training data has limited the development of IS agents. Existing approaches typically adopt an information-driven paradigm that first collects web data and then generates questions based on the retrieval. However, this may lead to inconsistency between information structure and reasoning structure, question and answer. To mitigate, we propose a formalization-driven IS data synthesis framework WebShaper to construct a dataset. WebShaper systematically formalizes IS tasks through set theory. Central to the formalization is the concept of Knowledge Projections (KP), which enables precise control over reasoning structure by KP operation compositions. During synthesis, we begin by creating seed tasks, then use a multi-step expansion process. At each step, an agentic Expander expands the current formal question more complex with retrieval and validation tools based on our formalization. We train our model on the synthesized dataset. Experiment results demonstrate that WebShaper achieves state-of-the-art performance among open-sourced IS agents on GAIA and WebWalkerQA benchmarks.
+</details>
+
+<details>
 <summary> <a href="https://arxiv.org/abs/2507.16727v1">Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints</a> </summary>
 
 - Date: Jul, 2025 
@@ -55,43 +181,6 @@ Despite improvements by length extrapolation, efficient attention and memory mod
 **TLDR**: 
 Improving the reliability of large language models (LLMs) is critical for deploying them in real-world scenarios. In this paper, we propose Deliberative Searcher, the first framework to integrate certainty calibration with retrieval-based search for open-domain question answering. The agent performs multi-step reflection and verification over Wikipedia data and is trained with a reinforcement learning algorithm that optimizes for accuracy under a soft reliability constraint. Empirical results show that proposed method improves alignment between model confidence and correctness, leading to more trustworthy outputs. This paper will be continuously updated.
 
-</details>
-
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2508.07976">Beyond Ten Turns: Unlocking Long-Horizon Agentic Search with Large-Scale Asynchronous RL</a>
-  <a href="https://github.com/inclusionAI/ASearcher"><img src="https://img.shields.io/github/stars/inclusionAI/ASearcher?style=social" alt="GitHub Stars"/></a>
-</summary>
-
-- Date: Aug, 2025  
-- Env: API, Browser  
-- RL: GRPO  
-- Base Model: Qwen2.5-7B, Qwen2.5-14B 
-- Benchmark: Single-Hop QA, Multi-Hop QA, GAIA, xBench-DeepSearch, Frames
-- reward: Model-based  
-
-**TLDR**:  
-Recent advancements in LLM-based agents have demonstrated remarkable capabilities in handling complex, knowledge-intensive tasks by integrating external tools. Among diverse choices of tools, search tools play a pivotal role in accessing vast external knowledge. However, open-source agents still fall short of achieving expert-level Search Intelligence, the ability to resolve ambiguous queries, generate precise searches, analyze results, and conduct thorough exploration. Existing approaches fall short in scalability, efficiency, and data quality. For example, small turn limits in existing online RL methods, e.g. <=10, restrict complex strategy learning. This paper introduces ASearcher, an open-source project for large-scale RL training of search agents. Our key contributions include: (1) Scalable fully asynchronous RL training that enables long-horizon search while maintaining high training efficiency. (2) A prompt-based LLM agent that autonomously synthesizes high-quality and challenging QAs, creating a large-scale QA dataset. Through RL training, our prompt-based QwQ-32B agent achieves substantial improvements, with 46.7% and 20.8% Avg@4 gains on xBench and GAIA, respectively. Notably, our agent exhibits extreme long-horizon search, with tool calls exceeding 40 turns and output tokens exceeding 150k during training time. With a simple agent design and no external LLMs, ASearcher-Web-QwQ achieves Avg@4 scores of 42.1 on xBench and 52.8 on GAIA, surpassing existing open-source 32B agents. We open-source our models, training data, and codes in this https URL. 
-
-</details>
-
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2503.09516">Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning</a>
-  <a href="https://github.com/PeterGriffinJin/Search-R1"><img src="https://img.shields.io/github/stars/PeterGriffinJin/Search-R1?style=social" alt="GitHub Stars"/></a>
-</summary>
-
-- Date: Aug, 2025  
-- Env: API 
-- RL: GRPO, PPO
-- Base Model: Qwen-2.5-3B (Base/Instruct), Qwen-2.5-7B (Base/Instruct) 
-- Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based  
-
-**TLDR**:  
-Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieval. Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function. Experiments on seven question-answering datasets show that Search-R1 improves performance by 41% (Qwen2.5-7B) and 20% (Qwen2.5-3B) over various RAG baselines under the same setting. This paper further provides empirical insights into RL optimization methods, LLM choices, and response length dynamics in retrieval-augmented reasoning. The code and model checkpoints are available at this https URL. 
 </details>
 
 <details>
@@ -113,114 +202,20 @@ Large-scale reinforcement learning with verifiable rewards (RLVR) has demonstrat
 
 <details>
 <summary>
-  <a href="https://arxiv.org/abs/2507.15061">WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization</a>
-  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
+  <a href="https://arxiv.org/abs/2508.07976">Beyond Ten Turns: Unlocking Long-Horizon Agentic Search with Large-Scale Asynchronous RL</a>
+  <a href="https://github.com/inclusionAI/ASearcher"><img src="https://img.shields.io/github/stars/inclusionAI/ASearcher?style=social" alt="GitHub Stars"/></a>
 </summary>
 
-- Date: Jul, 2025  
-- Env: API 
-- RL: GRPO with Cold Start
-- Base Model: QwQ-32B, Qwen-2.5-32B, Qwen-2.5-72B.
-- Benchmark: WebWalkerQA, GAIA
-- reward: Rule-based
+- Date: Aug, 2025  
+- Env: API, Browser  
+- RL: GRPO  
+- Base Model: Qwen2.5-7B, Qwen2.5-14B 
+- Benchmark: Single-Hop QA, Multi-Hop QA, GAIA, xBench-DeepSearch, Frames
+- reward: Model-based  
 
 **TLDR**:  
-The advent of Large Language Model (LLM)-powered agents has revolutionized artificial intelligence by enabling solutions to complex, open-ended tasks through web-based information-seeking (IS) capabilities. The scarcity of high-quality training data has limited the development of IS agents. Existing approaches typically adopt an information-driven paradigm that first collects web data and then generates questions based on the retrieval. However, this may lead to inconsistency between information structure and reasoning structure, question and answer. To mitigate, we propose a formalization-driven IS data synthesis framework WebShaper to construct a dataset. WebShaper systematically formalizes IS tasks through set theory. Central to the formalization is the concept of Knowledge Projections (KP), which enables precise control over reasoning structure by KP operation compositions. During synthesis, we begin by creating seed tasks, then use a multi-step expansion process. At each step, an agentic Expander expands the current formal question more complex with retrieval and validation tools based on our formalization. We train our model on the synthesized dataset. Experiment results demonstrate that WebShaper achieves state-of-the-art performance among open-sourced IS agents on GAIA and WebWalkerQA benchmarks.
+Recent advancements in LLM-based agents have demonstrated remarkable capabilities in handling complex, knowledge-intensive tasks by integrating external tools. Among diverse choices of tools, search tools play a pivotal role in accessing vast external knowledge. However, open-source agents still fall short of achieving expert-level Search Intelligence, the ability to resolve ambiguous queries, generate precise searches, analyze results, and conduct thorough exploration. Existing approaches fall short in scalability, efficiency, and data quality. For example, small turn limits in existing online RL methods, e.g. <=10, restrict complex strategy learning. This paper introduces ASearcher, an open-source project for large-scale RL training of search agents. Our key contributions include: (1) Scalable fully asynchronous RL training that enables long-horizon search while maintaining high training efficiency. (2) A prompt-based LLM agent that autonomously synthesizes high-quality and challenging QAs, creating a large-scale QA dataset. Through RL training, our prompt-based QwQ-32B agent achieves substantial improvements, with 46.7% and 20.8% Avg@4 gains on xBench and GAIA, respectively. Notably, our agent exhibits extreme long-horizon search, with tool calls exceeding 40 turns and output tokens exceeding 150k during training time. With a simple agent design and no external LLMs, ASearcher-Web-QwQ achieves Avg@4 scores of 42.1 on xBench and 52.8 on GAIA, surpassing existing open-source 32B agents. We open-source our models, training data, and codes in this https URL. 
 </details>
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2507.02592">WebSailor: Navigating Super-human Reasoning for Web Agent</a>
-  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
-</summary>
-
-- Date: Jul, 2025  
-- Env: API 
-- RL: GRPO with Cold Start
-- Base Model: Qwen-2.5-3B, Qwen-2.5-7B, Qwen-2.5-32B, Qwen-2.5-72B.
-- Benchmark: BrowseComp, Xbench-DeepSearch, GAIA
-- reward: Rule-based 
-
-**TLDR**:  
-Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
-</details>
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2505.22501">EvolveSearch: An Iterative Self-Evolving Search Agent</a>
-</summary>
-
-- Date: May, 2025  
-- Env: API 
-- RL: Iterative self-evolution with SFT and GRPO
-- Base Model: Qwen2.5-7B-Instruct
-- Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based 
-
-**TLDR**:  
-The rapid advancement of large language models (LLMs) has transformed the landscape of agentic information seeking capabilities through the integration of tools such as search engines and web browsers. However, current mainstream approaches for enabling LLM web search proficiency face significant challenges: supervised fine-tuning struggles with data production in open-search domains, while RL converges quickly, limiting their data utilization efficiency. To address these issues, we propose EvolveSearch, a novel iterative self-evolution framework that combines SFT and RL to enhance agentic web search capabilities without any external human-annotated reasoning data. Extensive experiments on seven multi-hop question-answering (MHQA) benchmarks demonstrate that EvolveSearch consistently improves performance across iterations, ultimately achieving an average improvement of 4.7\% over the current state-of-the-art across seven benchmarks, opening the door to self-evolution agentic capabilities in open web search domains.
-</details>
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2504.03160">DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments</a>
-  <a href="https://github.com/GAIR-NLP/DeepResearcher"><img src="https://img.shields.io/github/stars/GAIR-NLP/DeepResearcher?style=social" alt="GitHub Stars"/></a>
-</summary>
-
-- Date: Apr, 2025  
-- Env: API
-- RL: GRPO
-- Base Model: Qwen2.5-7B-Instruct
-- Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based 
-
-**TLDR**:  
-Large Language Models (LLMs) equipped with web search capabilities have demonstrated impressive potential for deep research tasks. However, current approaches predominantly rely on either manually engineered prompts (prompt engineering-based) with brittle performance or reinforcement learning within controlled Retrieval-Augmented Generation (RAG) environments (RAG-based) that fail to capture the complexities of real-world interaction. In this paper, we introduce DeepResearcher, the first comprehensive framework for end-to-end training of LLM-based deep research agents through scaling reinforcement learning (RL) in real-world environments with authentic web search interactions. Unlike RAG-based approaches that assume all necessary information exists within a fixed corpus, our method trains agents to navigate the noisy, unstructured, and dynamic nature of the open web. We implement a specialized multi-agent architecture where browsing agents extract relevant information from various webpage structures and overcoming significant technical challenges. Extensive experiments on open-domain research tasks demonstrate that DeepResearcher achieves substantial improvements of up to 28.9 points over prompt engineering-based baselines and up to 7.2 points over RAG-based RL agents. Our qualitative analysis reveals emergent cognitive behaviors from end-to-end RL training, including the ability to formulate plans, cross-validate information from multiple sources, engage in self-reflection to redirect research, and maintain honesty when unable to find definitive answers. Our results highlight that end-to-end training in real-world web environments is not merely an implementation detail but a fundamental requirement for developing robust research capabilities aligned with real-world applications.
-</details>
-
-<details> <summary> <a href="https://arxiv.org/abs/2504.21776">WebThinker: Empowering Large Reasoning Models with Deep Research Capability</a> <a href="https://github.com/RUC-NLPIR/WebThinker"><img src="https://img.shields.io/github/stars/RUC-NLPIR/WebThinker?style=social" alt="GitHub Stars"/></a> </summary>
-
-- Date: Apr, 2025. 
-- Env: Browser
-- RL: Online DPO
-- Base Model: QwQ-32B and DeepSeek-R1 distilled
-- Benchmark: GPQA, GAIA, WebWalkerQA, HLE. 
-- reward: Preferences built from reasoning correctness, tool usage, and final outputs.
-
-**TLDR**: Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate web pages, and draft research reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabling LRMs to dynamically search, navigate, and extract information from the web when encountering knowledge gaps. It also employs an Autonomous Think-Search-and-Draft strategy, allowing the model to seamlessly interleave reasoning, information gathering, and report writing in real time. To further enhance research tool utilization, we introduce an RL-based training strategy via iterative online Direct Preference Optimization (DPO). Extensive experiments on complex reasoning benchmarks (GPQA, GAIA, WebWalkerQA, HLE) and scientific report generation tasks (Glaive) demonstrate that WebThinker significantly outperforms existing methods and strong proprietary systems. Our approach enhances LRM reliability and applicability in complex scenarios, paving the way for more capable and versatile deep research systems. 
-</details>
-
-
-<details> <summary> <a href="https://arxiv.org/abs/2505.16834">SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a> <a href="https://github.com/RUCAIBox/SimpleDeepSearcher"><img src="https://img.shields.io/github/stars/RUCAIBox/SimpleDeepSearcher?style=social" alt="GitHub Stars"/></a> </summary>
-
-- Date: May, 2025  
-- Env: Search API 
-- SFT only on 871 samples 
-- Base Model: Qwen-2.5-7B, Qwen-2.5-32B, DeepSeek-Distilled-Qwen-2.5-32B, QwQ-32B. 
-- Benchmark: Multi-Hop QA, FRAMES, GAIA 
-
-**TLDR**: Retrieval-augmented generation (RAG) systems have advanced large language models (LLMs) in complex deep search scenarios requiring multi-step reasoning and iterative information retrieval. However, existing approaches face critical limitations that lack high-quality training trajectories or suffer from the distributional mismatches in simulated environments and prohibitive computational costs for real-world deployment. This paper introduces SimpleDeepSearcher, a lightweight yet effective framework that bridges this gap through strategic data engineering rather than complex training paradigms. Our approach synthesizes high-quality training data by simulating realistic user interactions in live web search environments, coupled with a multi-criteria curation strategy that optimizes the diversity and quality of input and output side. Experiments on five benchmarks across diverse domains demonstrate that SFT on only 871 curated samples yields significant improvements over RL-based baselines. Our work establishes SFT as a viable pathway by systematically addressing the data-scarce bottleneck, offering practical insights for efficient deep search systems. 
-
-</details>
-
-<details>
-<summary>
-  <a href="https://arxiv.org/abs/2505.04588">ZeroSearch: Incentivize the Search Capability of LLMs without Searching</a>
-  <a href="https://github.com/Alibaba-NLP/ZeroSearch"><img src="https://img.shields.io/github/stars/Alibaba-NLP/ZeroSearch?style=social" alt="GitHub Stars"/></a>
-</summary>
-
-- Date: May, 2025  
-- Env: LLM Synthesized
-- RL: REINFORCE, PPO, GRPO
-- Base Model: Qwen-2.5-3B(Base/Instruct), Qwen-2.5-7B (Base/Instruct), Llama-3.2-3B (Base/Instruct)
-- Benchmark: Single-Hop QA, Multi-Hop QA
-
-**TLDR**: 
-Effective information searching is essential for enhancing the reasoning and generation capabilities of large language models (LLMs). Recent research has explored using reinforcement learning (RL) to improve LLMs' search capabilities by interacting with live search engines in real-world environments. While these approaches show promising results, they face two major challenges: (1) Uncontrolled Document Quality: The quality of documents returned by search engines is often unpredictable, introducing noise and instability into the training process. (2) Prohibitively High API Costs: RL training requires frequent rollouts, potentially involving hundreds of thousands of search requests, which incur substantial API expenses and severely constrain scalability. To address these challenges, we introduce ZeroSearch, a novel RL framework that incentivizes the capabilities of LLMs to use a real search engine with simulated searches during training. Our approach begins with lightweight supervised fine-tuning to transform the LLM into a retrieval module capable of generating both useful and noisy documents in response to a query. During RL training, we employ a curriculum-based rollout strategy that incrementally degrades the quality of generated documents, progressively eliciting the model's reasoning ability by exposing it to increasingly challenging retrieval scenarios. Extensive experiments demonstrate that ZeroSearch effectively incentivizes the search capabilities of LLMs using a 3B LLM as the retrieval module. Remarkably, a 7B retrieval module achieves comparable performance to the real search engine, while a 14B retrieval module even surpasses it. Furthermore, it generalizes well across both base and instruction-tuned models of various parameter sizes and is compatible with a wide range of RL algorithms.
-
-
-</details>
-
 
 ## GUI Agent
 
