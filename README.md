@@ -148,6 +148,7 @@ The rapid advancement of large language models (LLMs) has transformed the landsc
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2504.03160">DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments</a>
+  <a href="https://github.com/GAIR-NLP/DeepResearcher"><img src="https://img.shields.io/github/stars/GAIR-NLP/DeepResearcher?style=social" alt="GitHub Stars"/></a>
 </summary>
 
 - Date: Apr, 2025  
