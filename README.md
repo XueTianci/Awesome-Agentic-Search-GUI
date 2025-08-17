@@ -95,6 +95,40 @@ Efficiently acquiring external knowledge and up-to-date information is essential
 
 </details>
 
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2507.15061">WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization</a>
+  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Jul, 2025  
+- Env: API 
+- RL: GRPO with Cold Start
+- Base Model: QwQ-32B, Qwen-2.5-32B, Qwen-2.5-72B.
+- Benchmark: WebWalkerQA, GAIA
+- reward: Rule-based
+
+**TLDR**:  
+Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2507.02592">WebSailor: Navigating Super-human Reasoning for Web Agent</a>
+  <a href="https://github.com/Alibaba-NLP/WebAgent"><img src="https://img.shields.io/github/stars/Alibaba-NLP/WebAgent?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Jul, 2025  
+- Env: API 
+- RL: GRPO with Cold Start
+- Base Model: Qwen-2.5-3B, Qwen-2.5-7B, Qwen-2.5-32B, Qwen-2.5-72B.
+- Benchmark: BrowseComp, Xbench-DeepSearch, GAIA
+- reward: Rule-based 
+
+**TLDR**:  
+Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
+</details>
+
 <details> <summary> <a href="https://arxiv.org/abs/2504.21776">WebThinker: Empowering Large Reasoning Models with Deep Research Capability</a> <a href="https://github.com/RUC-NLPIR/WebThinker"><img src="https://img.shields.io/github/stars/RUC-NLPIR/WebThinker?style=social" alt="GitHub Stars"/></a> </summary>
 
 - Date: Apr, 2025. 
