@@ -343,6 +343,21 @@ LLM-based web agents have recently made significant progress, but much of it has
 
 </details>
 
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2506.03533">Go-Browse: Training Web Agents with Structured Exploration</a>
+  <a href="https://github.com/ApGa/Go-Browse"><img src="https://img.shields.io/github/stars/ApGa/Go-Browse?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Jun, 2025  
+- Env: Web  
+- Base Model: Qwen-2.5-7B-Instruct
+- Benchmark: WebArena  
+
+**TLDR**:  
+One of the fundamental problems in digital agents is their lack of understanding of their environment. For instance, a web browsing agent may get lost in unfamiliar websites, uncertain what pages must be visited to achieve its goals. To address this, we propose Go-Browse, a method for automatically collecting diverse and realistic web agent data at scale through structured exploration of web environments. Go-Browse achieves efficient exploration by framing data collection as a graph search, enabling reuse of information across exploration episodes. We instantiate our method on the WebArena benchmark, collecting a dataset of 10K successful task-solving trajectories and 40K interaction steps across 100 URLs. Fine-tuning a 7B parameter language model on this dataset achieves a success rate of 21.7% on the WebArena benchmark, beating GPT-4o mini by 2.4% and exceeding current state-of-the-art results for sub-10B parameter models by 2.9%.
+
+</details>
 
 <details>
 <summary>
