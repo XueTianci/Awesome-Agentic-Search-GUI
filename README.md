@@ -355,7 +355,7 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 
 - Date: Jul, 2025  
 - Env: Android  
-- Method: GRPO  
+- RL: GRPO  
 - Base Model: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-32B-Instruct  
 - Benchmark: AndroidWorld, Android-in-theWild  
 - Paradigm: Rule-based  
