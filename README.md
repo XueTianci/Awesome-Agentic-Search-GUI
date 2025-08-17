@@ -129,6 +129,38 @@ The advent of Large Language Model (LLM)-powered agents has revolutionized artif
 Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
 </details>
 
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2505.22501">EvolveSearch: An Iterative Self-Evolving Search Agent</a>
+</summary>
+
+- Date: May, 2025  
+- Env: API 
+- RL: Iterative self-evolution with SFT and GRPO
+- Base Model: Qwen2.5-7B-Instruct
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based 
+
+**TLDR**:  
+The rapid advancement of large language models (LLMs) has transformed the landscape of agentic information seeking capabilities through the integration of tools such as search engines and web browsers. However, current mainstream approaches for enabling LLM web search proficiency face significant challenges: supervised fine-tuning struggles with data production in open-search domains, while RL converges quickly, limiting their data utilization efficiency. To address these issues, we propose EvolveSearch, a novel iterative self-evolution framework that combines SFT and RL to enhance agentic web search capabilities without any external human-annotated reasoning data. Extensive experiments on seven multi-hop question-answering (MHQA) benchmarks demonstrate that EvolveSearch consistently improves performance across iterations, ultimately achieving an average improvement of 4.7\% over the current state-of-the-art across seven benchmarks, opening the door to self-evolution agentic capabilities in open web search domains.
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2504.03160">DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments</a>
+</summary>
+
+- Date: Apr, 2025  
+- Env: API
+- RL: GRPO
+- Base Model: Qwen2.5-7B-Instruct
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based 
+
+**TLDR**:  
+The rapid advancement of large language models (LLMs) has transformed the landscape of agentic information seeking capabilities through the integration of tools such as search engines and web browsers. However, current mainstream approaches for enabling LLM web search proficiency face significant challenges: supervised fine-tuning struggles with data production in open-search domains, while RL converges quickly, limiting their data utilization efficiency. To address these issues, we propose EvolveSearch, a novel iterative self-evolution framework that combines SFT and RL to enhance agentic web search capabilities without any external human-annotated reasoning data. Extensive experiments on seven multi-hop question-answering (MHQA) benchmarks demonstrate that EvolveSearch consistently improves performance across iterations, ultimately achieving an average improvement of 4.7\% over the current state-of-the-art across seven benchmarks, opening the door to self-evolution agentic capabilities in open web search domains.
+</details>
+
 <details> <summary> <a href="https://arxiv.org/abs/2504.21776">WebThinker: Empowering Large Reasoning Models with Deep Research Capability</a> <a href="https://github.com/RUC-NLPIR/WebThinker"><img src="https://img.shields.io/github/stars/RUC-NLPIR/WebThinker?style=social" alt="GitHub Stars"/></a> </summary>
 
 - Date: Apr, 2025. 
