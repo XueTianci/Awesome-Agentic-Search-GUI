@@ -17,6 +17,47 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 
 ## Agentic Search
 
+<details> <summary> <a href="https://arxiv.org/html/2506.15841v1">MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents</a> <a href="https://github.com/MIT-MI/MEM1"><img src="https://img.shields.io/github/stars/MIT-MI/MEM1?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: Jun, 2025 
+- Env: Wikipedia dump, Google Search API, WebShop browser env 
+- RL: PPO
+- Base Model: Qwen2.5-7B
+- Benchmark: HotpotQA+NQ (Augmented); WebShop 
+- reward: Rule-based for QA; environment reward for WebShop 
+
+**TLDR**:  Modern language agents must operate over long-horizon, multi-turn interactions, where they retrieve external information, adapt to observations, and answer interdependent queries. Yet, most LLM systems rely on full-context prompting, appending all past turns regardless of their relevance. This leads to unbounded memory growth, increased computational costs, and degraded reasoning performance on out-of-distribution input lengths. We introduce MEM1, an end-to-end reinforcement learning framework that enables agents to operate with constant memory across long multi-turn tasks. At each turn, MEM1 updates a compact shared internal state that jointly supports memory consolidation and reasoning. This state integrates prior memory with new observations from the environment while strategically discarding irrelevant or redundant information. To support training in more realistic and compositional settings, we propose a simple yet effective and scalable approach to constructing multi-turn environments by composing existing datasets into arbitrarily complex task sequences. Experiments across three domains, including internal retrieval QA, open-domain web QA, and multi-turn web shopping, show that MEM1-7B improves performance by 3.5× while reducing memory usage by 3.7× compared to Qwen2.5-14B-Instruct on a 16-objective multi-hop QA task, and generalizes beyond the training horizon. Our results demonstrate the promise of reasoning-driven memory consolidation as a scalable alternative to existing solutions for training long-horizon interactive agents, where both efficiency and performance are optimized.
+</details>
+
+<details> <summary> <a href="https://arxiv.org/abs/2507.02259">MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent</a> <a href="https://github.com/BytedTsinghua-SIA/MemAgent"><img src="https://img.shields.io/github/stars/BytedTsinghua-SIA/MemAgent?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: Jul, 2025 
+- Env: Long-context text reading & QA (RULER-HotpotQA, NIAH, VT); no external tools required 
+- RL: DAPO 
+- Base Model: Qwen2.5-7B-Instruct, Qwen2.5-14B-Instruct
+- Benchmark: RULER (QA part), Needle-in-a-Haystack
+- reward: Rule-based
+
+**TLDR**: 
+Despite improvements by length extrapolation, efficient attention and memory modules, handling infinitely long documents with linear complexity without performance degradation during extrapolation remains the ultimate challenge in long-text processing. We directly optimize for long-text tasks in an end-to-end fashion and introduce a novel agent workflow, MemAgent, which reads text in segments and updates the memory using an overwrite strategy. We extend the DAPO algorithm to facilitate training via independent-context multi-conversation generation. MemAgent has demonstrated superb long-context capabilities, being able to extrapolate from an 8K context trained on 32K text to a 3.5M QA task with performance loss < 5% and achieves 95%+ in 512K RULER test.
+</details>
+
+<details>
+<summary> <a href="https://arxiv.org/abs/2507.16727v1">Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints</a> </summary>
+
+- Date: Jul, 2025 
+- Env: Wikipedia dump, Google Search API
+- RL: GRPO
+- Base Model: 7B and 72B checkpoint (Shanghai AI Lab)  
+- Benchmark: Multi-hop QA, GAIA, xBench-DeepSearch;
+- reward: Rule-based
+
+**TLDR**: 
+Improving the reliability of large language models (LLMs) is critical for deploying them in real-world scenarios. In this paper, we propose Deliberative Searcher, the first framework to integrate certainty calibration with retrieval-based search for open-domain question answering. The agent performs multi-step reflection and verification over Wikipedia data and is trained with a reinforcement learning algorithm that optimizes for accuracy under a soft reliability constraint. Empirical results show that proposed method improves alignment between model confidence and correctness, leading to more trustworthy outputs. This paper will be continuously updated.
+
+</details>
+
+
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2508.07976">Beyond Ten Turns: Unlocking Long-Horizon Agentic Search with Large-Scale Asynchronous RL</a>
@@ -53,6 +94,7 @@ Recent advancements in LLM-based agents have demonstrated remarkable capabilitie
 Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieval. Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function. Experiments on seven question-answering datasets show that Search-R1 improves performance by 41% (Qwen2.5-7B) and 20% (Qwen2.5-3B) over various RAG baselines under the same setting. This paper further provides empirical insights into RL optimization methods, LLM choices, and response length dynamics in retrieval-augmented reasoning. The code and model checkpoints are available at this https URL. 
 
 </details>
+
 
 
 ## GUI Agent
@@ -93,10 +135,8 @@ Autonomous agents that operate computers via Graphical User Interfaces (GUIs) of
 
 - Date: Aug, 2025  
 - Env: Mobile 
-- RL: GRPO  
 - Base Model: Qwen‑VL  
 - Benchmark: GUI-Odyssey, AndroidControl, Magic-RICH
-- reward: Rule-based
 
 **TLDR**:  
 This paper presents MagicGUI, a foundational mobile GUI agent designed to address critical challenges in perception, grounding, and reasoning within real-world mobile GUI environments. The framework is underpinned by following six key components: (1) a comprehensive and accurate dataset, constructed via the scalable GUI Data Pipeline, which aggregates the largest and most diverse GUI-centric multimodal data to date from open-source repositories, automated crawling, and targeted manual annotation; (2) enhanced perception and grounding capabilities, facilitating fine-grained multimodal alignment for UI element referencing, grounding, and screen comprehension; (3) a comprehensive and unified action space, encompassing both fundamental UI operations and complex interactive intents to support human-agent interactions; (4) planning-oriented reasoning mechanisms that enable the model to decompose complex user instructions into sequential actions with explicit intermediate meta-paln reasoning; (5) an iterative two-stage training procedure, combining large-scale continue pre-training on 7.8M samples with reinforcement fine-tuning utilizing a spatially enhanced composite reward and dual filtering strategy; and (6) competitive performance on both the proprietary Magic-RICH benchmark and over a dozen public benchmarks, achieving superior performance across GUI perception and agent tasks, while demonstrating robust generalization and real-world deployment potential in practical mobile GUI scenarios, as detailed in Figure 1.
