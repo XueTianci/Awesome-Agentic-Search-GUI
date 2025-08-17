@@ -95,6 +95,17 @@ Efficiently acquiring external knowledge and up-to-date information is essential
 
 </details>
 
+<details> <summary> <a href="https://arxiv.org/abs/2505.16834">SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a> <a href="https://github.com/RUCAIBox/SimpleDeepSearcher"><img src="https://img.shields.io/github/stars/RUCAIBox/SimpleDeepSearcher?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: May, 2025  
+- Env: Search API 
+- SFT only on 871 samples 
+- Base Model: Qwen-2.5-7B, Qwen-2.5-32B, DeepSeek-Distilled-Qwen-2.5-32B, QwQ-32B. 
+- Benchmark: Multi-Hop QA, FRAMES, GAIA 
+
+**TLDR**: Retrieval-augmented generation (RAG) systems have advanced large language models (LLMs) in complex deep search scenarios requiring multi-step reasoning and iterative information retrieval. However, existing approaches face critical limitations that lack high-quality training trajectories or suffer from the distributional mismatches in simulated environments and prohibitive computational costs for real-world deployment. This paper introduces SimpleDeepSearcher, a lightweight yet effective framework that bridges this gap through strategic data engineering rather than complex training paradigms. Our approach synthesizes high-quality training data by simulating realistic user interactions in live web search environments, coupled with a multi-criteria curation strategy that optimizes the diversity and quality of input and output side. Experiments on five benchmarks across diverse domains demonstrate that SFT on only 871 curated samples yields significant improvements over RL-based baselines. Our work establishes SFT as a viable pathway by systematically addressing the data-scarce bottleneck, offering practical insights for efficient deep search systems. 
+
+</details>
 
 
 ## GUI Agent
