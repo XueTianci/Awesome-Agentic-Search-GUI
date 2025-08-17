@@ -36,6 +36,25 @@ Recent advancements in LLM-based agents have demonstrated remarkable capabilitie
 </details>
 
 
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2503.09516">Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning</a>
+  <a href="https://github.com/PeterGriffinJin/Search-R1"><img src="https://img.shields.io/github/stars/PeterGriffinJin/Search-R1?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Aug, 2025  
+- Env: API 
+- RL: GRPO, PPO
+- Base Model: Qwen-2.5-3B (Base/Instruct), Qwen-2.5-7B (Base/Instruct) 
+- Benchmark: Single-Hop QA, Multi-Hop QA
+- reward: Rule-based  
+
+**TLDR**:  
+Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieval. Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function. Experiments on seven question-answering datasets show that Search-R1 improves performance by 41% (Qwen2.5-7B) and 20% (Qwen2.5-3B) over various RAG baselines under the same setting. This paper further provides empirical insights into RL optimization methods, LLM choices, and response length dynamics in retrieval-augmented reasoning. The code and model checkpoints are available at this https URL. 
+
+</details>
+
+
 ## GUI Agent
 
 
@@ -74,8 +93,10 @@ Autonomous agents that operate computers via Graphical User Interfaces (GUIs) of
 
 - Date: Aug, 2025  
 - Env: Mobile 
+- RL: GRPO  
 - Base Model: Qwen‑VL  
 - Benchmark: GUI-Odyssey, AndroidControl, Magic-RICH
+- reward: Rule-based
 
 **TLDR**:  
 This paper presents MagicGUI, a foundational mobile GUI agent designed to address critical challenges in perception, grounding, and reasoning within real-world mobile GUI environments. The framework is underpinned by following six key components: (1) a comprehensive and accurate dataset, constructed via the scalable GUI Data Pipeline, which aggregates the largest and most diverse GUI-centric multimodal data to date from open-source repositories, automated crawling, and targeted manual annotation; (2) enhanced perception and grounding capabilities, facilitating fine-grained multimodal alignment for UI element referencing, grounding, and screen comprehension; (3) a comprehensive and unified action space, encompassing both fundamental UI operations and complex interactive intents to support human-agent interactions; (4) planning-oriented reasoning mechanisms that enable the model to decompose complex user instructions into sequential actions with explicit intermediate meta-paln reasoning; (5) an iterative two-stage training procedure, combining large-scale continue pre-training on 7.8M samples with reinforcement fine-tuning utilizing a spatially enhanced composite reward and dual filtering strategy; and (6) competitive performance on both the proprietary Magic-RICH benchmark and over a dozen public benchmarks, achieving superior performance across GUI perception and agent tasks, while demonstrating robust generalization and real-world deployment potential in practical mobile GUI scenarios, as detailed in Figure 1.
