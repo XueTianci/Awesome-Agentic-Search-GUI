@@ -95,6 +95,19 @@ Efficiently acquiring external knowledge and up-to-date information is essential
 
 </details>
 
+<details> <summary> <a href="https://arxiv.org/abs/2504.21776">WebThinker: Empowering Large Reasoning Models with Deep Research Capability</a> <a href="https://github.com/RUC-NLPIR/WebThinker"><img src="https://img.shields.io/github/stars/RUC-NLPIR/WebThinker?style=social" alt="GitHub Stars"/></a> </summary>
+
+- Date: Apr, 2025. 
+- Env: Browser
+- RL: Online DPO
+- Base Model: QwQ-32B and DeepSeek-R1 distilled
+- Benchmark: GPQA, GAIA, WebWalkerQA, HLE. 
+- reward: Preferences built from reasoning correctness, tool usage, and final outputs.
+
+**TLDR**: Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate web pages, and draft research reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabling LRMs to dynamically search, navigate, and extract information from the web when encountering knowledge gaps. It also employs an Autonomous Think-Search-and-Draft strategy, allowing the model to seamlessly interleave reasoning, information gathering, and report writing in real time. To further enhance research tool utilization, we introduce an RL-based training strategy via iterative online Direct Preference Optimization (DPO). Extensive experiments on complex reasoning benchmarks (GPQA, GAIA, WebWalkerQA, HLE) and scientific report generation tasks (Glaive) demonstrate that WebThinker significantly outperforms existing methods and strong proprietary systems. Our approach enhances LRM reliability and applicability in complex scenarios, paving the way for more capable and versatile deep research systems. 
+</details>
+
+
 <details> <summary> <a href="https://arxiv.org/abs/2505.16834">SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a> <a href="https://github.com/RUCAIBox/SimpleDeepSearcher"><img src="https://img.shields.io/github/stars/RUCAIBox/SimpleDeepSearcher?style=social" alt="GitHub Stars"/></a> </summary>
 
 - Date: May, 2025  
