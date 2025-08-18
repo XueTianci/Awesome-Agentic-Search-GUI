@@ -349,6 +349,7 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2507.05791">GTA1: GUI Test-time Scaling Agent</a>
+  <a href="https://github.com/Yan98/GTA1"><img src="https://img.shields.io/github/stars/Yan98/GTA1?style=social" alt="GitHub Stars"/></a>
 </summary>
 
 - Date: Jul, 2025  
