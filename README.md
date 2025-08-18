@@ -352,9 +352,11 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 </summary>
 
 - Date: Jul, 2025  
-- Env: Mobile 
-- Base Model: Qwen‑VL  
-- Benchmark: GUI-Odyssey, AndroidControl, Magic-RICH
+- Env: Computer  
+- RL: GRPO  
+- Base Model: UI-TARS-1.5-7B, Qwen2.5-VL-32BInstruct, Qwen2.5-VL-72B-Instruct 
+- Benchmark:  ScreenSpot, OSWorld-G, OSWorld  
+- Paradigm: Rule-based  
 
 **TLDR**:  
 Graphical user interface (GUI) agents autonomously operate across platforms (e.g., Linux) to complete tasks by interacting with visual elements. Specifically, a user instruction is decomposed into a sequence of action proposals, each corresponding to an interaction with the GUI. After each action, the agent observes the updated GUI environment to plan the next step. However, two main challenges arise: i) resolving ambiguity in task planning (i.e., the action proposal sequence), where selecting an appropriate plan is non-trivial, as many valid ones may exist; ii) accurately grounding actions in complex and high-resolution interfaces, i.e., precisely interacting with visual targets.
@@ -368,10 +370,10 @@ Experimentally, our method establishes state-of-the-art performance across diver
 </summary>
 
 - Date: Jul, 2025  
-- Env: Computer  
+- Env: Android  
 - RL: GRPO  
-- Base Model: UI-TARS-1.5-7B, Qwen2.5-VL-32BInstruct, Qwen2.5-VL-72B-Instruct 
-- Benchmark:  ScreenSpot, OSWorld-G, OSWorld  
+- Base Model: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-32B-Instruct  
+- Benchmark: AndroidWorld, Android-in-theWild  
 - Paradigm: Rule-based  
 
 **TLDR**:  
