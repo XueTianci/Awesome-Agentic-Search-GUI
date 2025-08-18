@@ -1,6 +1,6 @@
 # Awesome Agentic Search and GUI Agents
 
-This repository is a curated collection of research papers and resources on building next-generation GUI Agents and Agentic Search agents.
+This repository is a curated collection of research papers and resources on building next-generation GUI Agents and Agentic Search systems.
 
 GUI Agents – Autonomous systems that can interact with graphical user interfaces by perceiving UI elements (e.g., buttons, inputs, menus) and performing human-like actions such as clicking, typing, and dragging to accomplish tasks.
 
