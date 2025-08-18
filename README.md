@@ -294,7 +294,6 @@ Vision-language models have demonstrated impressive capabilities as computer-use
 Autonomous agents that operate computers via Graphical User Interfaces (GUIs) often struggle with efficiency and reliability on complex, long-horizon tasks. While augmenting these agents with planners can improve task decomposition, they remain constrained by the inherent limitations of performing all actions through GUI manipulation, leading to brittleness and inefficiency. In this work, we introduce a more robust and flexible paradigm: enabling agents to use coding as a enhanced action. We present CoAct-1, a novel multi-agent system that synergistically combines GUI-based control with direct programmatic execution. CoAct-1 features an Orchestrator that dynamically delegates subtasks to either a conventional GUI Operator or a specialized Programmer agent, which can write and execute Python or Bash scripts. This hybrid approach allows the agent to bypass inefficient GUI action sequences for tasks like file management and data processing, while still leveraging visual interaction when necessary. We evaluate our system on the challenging OSWorld benchmark, where CoAct-1 achieves a new state-of-the-art success rate of 60.76%, significantly outperforming prior methods. Furthermore, our approach dramatically improves efficiency, reducing the average number of steps required to complete a task to just 10.15, compared to 15 for leading GUI agents. Our results demonstrate that integrating coding as a core action provides a more powerful, efficient, and scalable path toward generalized computer automation.
 </details>
 
-
 <details>
 <summary>
   <a href="https://arxiv.org/abs/2508.03700">MagicGUI: A Foundational Mobile GUI Agent with Scalable Data Pipeline and Reinforcement Fine-tuning</a>
@@ -347,6 +346,21 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 
 </details>
 
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2507.05791">GTA1: GUI Test-time Scaling Agent</a>
+</summary>
+
+- Date: Jul, 2025  
+- Env: Mobile 
+- Base Model: Qwen‑VL  
+- Benchmark: GUI-Odyssey, AndroidControl, Magic-RICH
+
+**TLDR**:  
+Graphical user interface (GUI) agents autonomously operate across platforms (e.g., Linux) to complete tasks by interacting with visual elements. Specifically, a user instruction is decomposed into a sequence of action proposals, each corresponding to an interaction with the GUI. After each action, the agent observes the updated GUI environment to plan the next step. However, two main challenges arise: i) resolving ambiguity in task planning (i.e., the action proposal sequence), where selecting an appropriate plan is non-trivial, as many valid ones may exist; ii) accurately grounding actions in complex and high-resolution interfaces, i.e., precisely interacting with visual targets.
+This paper investigates the two aforementioned challenges with our GUI Test-time Scaling Agent, namely GTA1. First, to select the most appropriate action proposal, we introduce a test-time scaling method. At each step, we sample multiple candidate action proposals and leverage a judge model to evaluate and select the most suitable one. It trades off computation for better decision quality by concurrent sampling, shortening task execution steps, and improving overall performance. Second, we propose a model that achieves improved accuracy when grounding the selected action proposal to its corresponding visual elements. Our key insight is that reinforcement learning (RL) facilitates visual grounding through inherent objective alignments, rewarding successful clicks on interface elements.
+Experimentally, our method establishes state-of-the-art performance across diverse benchmarks. For example, GTA1-7B achieves 50.1%, 92.4%, and 67.7% accuracies on Screenspot-Pro, Screenspot-V2, and OSWorld-G, respectively. When paired with a planner applying our test-time scaling strategy, it exhibits state-of-the-art agentic performance (e.g., 45.2% task success rate on OSWorld). We open-source our code and models here.
+</details>
 
 <details>
 <summary>
@@ -354,10 +368,10 @@ Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) h
 </summary>
 
 - Date: Jul, 2025  
-- Env: Android  
+- Env: Computer  
 - RL: GRPO  
-- Base Model: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-32B-Instruct  
-- Benchmark: AndroidWorld, Android-in-theWild  
+- Base Model: UI-TARS-1.5-7B, Qwen2.5-VL-32BInstruct, Qwen2.5-VL-72B-Instruct 
+- Benchmark:  ScreenSpot, OSWorld-G, OSWorld  
 - Paradigm: Rule-based  
 
 **TLDR**:  
