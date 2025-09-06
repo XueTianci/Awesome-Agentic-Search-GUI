@@ -18,6 +18,37 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 
 <details>
 <summary>
+  <a href="https://arxiv.org/abs/2509.02547v1">The Landscape of Agentic Reinforcement Learning for LLMs: A Survey</a>
+</summary>
+
+- Date: Aug, 2025  
+
+**TLDR**:  
+The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into autonomous, decision-making agents embedded in complex, dynamic worlds. This survey formalizes this conceptual shift by contrasting the degenerate single-step Markov Decision Processes (MDPs) of LLM-RL with the temporally extended, partially observable Markov decision processes (POMDPs) that define Agentic RL. Building on this foundation, we propose a comprehensive twofold taxonomy: one organized around core agentic capabilities, including planning, tool use, memory, reasoning, self-improvement, and perception, and the other around their applications across diverse task domains. Central to our thesis is that reinforcement learning serves as the critical mechanism for transforming these capabilities from static, heuristic modules into adaptive, robust agentic behavior. To support and accelerate future research, we consolidate the landscape of open-source environments, benchmarks, and frameworks into a practical compendium. By synthesizing over five hundred recent works, this survey charts the contours of this rapidly evolving field and highlights the opportunities and challenges that will shape the development of scalable, general-purpose AI agents.
+
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2508.10874">SSRL: Self-Search Reinforcement Learning
+</a>
+  <a href="https://github.com/TsinghuaC3I/SSRL"><img src="https://img.shields.io/github/stars/TsinghuaC3I/SSRL?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Aug, 2025
+- Env: API  
+- RL: GRPO  
+- Base Model: Qwen2.5-3B-Instruct, Qwen2.5-7B-Instruct, Llama3.1-3B-Instruct, Llama3.1-8B-Instruct 
+- Benchmark: Single-Hop QA, Multi-Hop QA, BrowseComp
+- Novelty: Using internal knowledge of the model as the retrieval, it accelerates the training process and can transfer to API retrieval at test time.
+- Reward: Rule-based  
+
+**TLDR**:  
+We investigate the potential of large language models (LLMs) to serve as efficient simulators for agentic search tasks in reinforcement learning (RL), thereby reducing dependence on costly interactions with external search engines. To this end, we first quantify the intrinsic search capability of LLMs via structured prompting and repeated sampling, which we term Self-Search. Our results reveal that LLMs exhibit strong scaling behavior with respect to the inference budget, achieving high pass@k on question-answering benchmarks, including the challenging BrowseComp task. Building on these observations, we introduce Self-Search RL (SSRL), which enhances LLMs' Self-Search capability through format-based and rule-based rewards. SSRL enables models to iteratively refine their knowledge utilization internally, without requiring access to external tools. Empirical evaluations demonstrate that SSRL-trained policy models provide a cost-effective and stable environment for search-driven RL training, reducing reliance on external search engines and facilitating robust sim-to-real transfer. We draw the following conclusions: 1) LLMs possess world knowledge that can be effectively elicited to achieve high performance; 2) SSRL demonstrates the potential of leveraging internal knowledge to reduce hallucination; 3) SSRL-trained models integrate seamlessly with external search engines without additional effort. Our findings highlight the potential of LLMs to support more scalable RL agent training. 
+</details>
+
+<details>
+<summary>
   <a href="https://arxiv.org/abs/2508.07976">Beyond Ten Turns: Unlocking Long-Horizon Agentic Search with Large-Scale Asynchronous RL</a>
   <a href="https://github.com/inclusionAI/ASearcher"><img src="https://img.shields.io/github/stars/inclusionAI/ASearcher?style=social" alt="GitHub Stars"/></a>
 </summary>
@@ -27,7 +58,7 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 - RL: GRPO  
 - Base Model: Qwen2.5-7B, Qwen2.5-14B 
 - Benchmark: Single-Hop QA, Multi-Hop QA, GAIA, xBench-DeepSearch, Frames
-- reward: Model-based  
+- Reward: Model-based  
 
 **TLDR**:  
 Recent advancements in LLM-based agents have demonstrated remarkable capabilities in handling complex, knowledge-intensive tasks by integrating external tools. Among diverse choices of tools, search tools play a pivotal role in accessing vast external knowledge. However, open-source agents still fall short of achieving expert-level Search Intelligence, the ability to resolve ambiguous queries, generate precise searches, analyze results, and conduct thorough exploration. Existing approaches fall short in scalability, efficiency, and data quality. For example, small turn limits in existing online RL methods, e.g. <=10, restrict complex strategy learning. This paper introduces ASearcher, an open-source project for large-scale RL training of search agents. Our key contributions include: (1) Scalable fully asynchronous RL training that enables long-horizon search while maintaining high training efficiency. (2) A prompt-based LLM agent that autonomously synthesizes high-quality and challenging QAs, creating a large-scale QA dataset. Through RL training, our prompt-based QwQ-32B agent achieves substantial improvements, with 46.7% and 20.8% Avg@4 gains on xBench and GAIA, respectively. Notably, our agent exhibits extreme long-horizon search, with tool calls exceeding 40 turns and output tokens exceeding 150k during training time. With a simple agent design and no external LLMs, ASearcher-Web-QwQ achieves Avg@4 scores of 42.1 on xBench and 52.8 on GAIA, surpassing existing open-source 32B agents. We open-source our models, training data, and codes in this https URL. 
@@ -44,7 +75,7 @@ Recent advancements in LLM-based agents have demonstrated remarkable capabilitie
 - RL: DAPO 
 - Base Model: Qwen2.5-7B-Instruct, Qwen2.5-14B-Instruct
 - Benchmark: RULER (QA part), Needle-in-a-Haystack
-- reward: Rule-based
+- Reward: Rule-based
 
 **TLDR**: 
 Despite improvements by length extrapolation, efficient attention and memory modules, handling infinitely long documents with linear complexity without performance degradation during extrapolation remains the ultimate challenge in long-text processing. We directly optimize for long-text tasks in an end-to-end fashion and introduce a novel agent workflow, MemAgent, which reads text in segments and updates the memory using an overwrite strategy. We extend the DAPO algorithm to facilitate training via independent-context multi-conversation generation. MemAgent has demonstrated superb long-context capabilities, being able to extrapolate from an 8K context trained on 32K text to a 3.5M QA task with performance loss < 5% and achieves 95%+ in 512K RULER test.
@@ -61,7 +92,7 @@ Despite improvements by length extrapolation, efficient attention and memory mod
 - RL: GRPO with Cold Start
 - Base Model: Qwen-2.5-3B, Qwen-2.5-7B, Qwen-2.5-32B, Qwen-2.5-72B.
 - Benchmark: BrowseComp, Xbench-DeepSearch, GAIA
-- reward: Rule-based 
+- Reward: Rule-based 
 
 **TLDR**:  
 Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucial capability. Our approach involves generating novel, high-uncertainty tasks through structured sampling and information obfuscation, RFT cold start, and an efficient agentic RL training algorithm, Duplicating Sampling Policy Optimization (DUPO). With this integrated pipeline, WebSailor significantly outperforms all opensource agents in complex information-seeking tasks, matching proprietary agents' performance and closing the capability gap.
@@ -78,7 +109,7 @@ Transcending human cognitive limitations represents a critical frontier in LLM t
 - RL: GRPO with Cold Start
 - Base Model: QwQ-32B, Qwen-2.5-32B, Qwen-2.5-72B.
 - Benchmark: WebWalkerQA, GAIA
-- reward: Rule-based
+- Reward: Rule-based
 
 **TLDR**:  
 The advent of Large Language Model (LLM)-powered agents has revolutionized artificial intelligence by enabling solutions to complex, open-ended tasks through web-based information-seeking (IS) capabilities. The scarcity of high-quality training data has limited the development of IS agents. Existing approaches typically adopt an information-driven paradigm that first collects web data and then generates questions based on the retrieval. However, this may lead to inconsistency between information structure and reasoning structure, question and answer. To mitigate, we propose a formalization-driven IS data synthesis framework WebShaper to construct a dataset. WebShaper systematically formalizes IS tasks through set theory. Central to the formalization is the concept of Knowledge Projections (KP), which enables precise control over reasoning structure by KP operation compositions. During synthesis, we begin by creating seed tasks, then use a multi-step expansion process. At each step, an agentic Expander expands the current formal question more complex with retrieval and validation tools based on our formalization. We train our model on the synthesized dataset. Experiment results demonstrate that WebShaper achieves state-of-the-art performance among open-sourced IS agents on GAIA and WebWalkerQA benchmarks.
@@ -94,7 +125,7 @@ The advent of Large Language Model (LLM)-powered agents has revolutionized artif
 - RL: GRPO
 - Base Model: 7B and 72B checkpoint (Shanghai AI Lab)  
 - Benchmark: Multi-hop QA, GAIA, xBench-DeepSearch;
-- reward: Rule-based
+- Reward: Rule-based
 
 **TLDR**: 
 Improving the reliability of large language models (LLMs) is critical for deploying them in real-world scenarios. In this paper, we propose Deliberative Searcher, the first framework to integrate certainty calibration with retrieval-based search for open-domain question answering. The agent performs multi-step reflection and verification over Wikipedia data and is trained with a reinforcement learning algorithm that optimizes for accuracy under a soft reliability constraint. Empirical results show that proposed method improves alignment between model confidence and correctness, leading to more trustworthy outputs. This paper will be continuously updated.
@@ -112,7 +143,7 @@ Improving the reliability of large language models (LLMs) is critical for deploy
 - RL: ARPO with Cold Start
 - Base Model: Qwen2.5-3B-Instruct, Qwen2.5-7B-Instruct, Llama3.1-8B-Instruct
 - Benchmark: AIME, WebWalkerQA, GAIA, HLE, xbench, Multi-Hop QA
-- reward: Rule-based
+- Reward: Rule-based
 
 **TLDR**:  
 Large-scale reinforcement learning with verifiable rewards (RLVR) has demonstrated its effectiveness in harnessing the potential of large language models (LLMs) for single-turn reasoning tasks. In realistic reasoning scenarios, LLMs can often utilize external tools to assist in task-solving processes. However, current RL algorithms inadequately balance the models' intrinsic long-horizon reasoning capabilities and their proficiency in multi-turn tool interactions. To bridge this gap, we propose Agentic Reinforced Policy Optimization (ARPO), a novel agentic RL algorithm tailored for training multi-turn LLM-based agents. Through preliminary experiments, we observe that LLMs tend to exhibit highly uncertain behavior, characterized by an increase in the entropy distribution of generated tokens, immediately following interactions with external tools. Motivated by this observation, ARPO incorporates an entropy-based adaptive rollout mechanism, dynamically balancing global trajectory sampling and step-level sampling, thereby promoting exploration at steps with high uncertainty after tool usage. By integrating an advantage attribution estimation, ARPO enables LLMs to internalize advantage differences in stepwise tool-use interactions. Our experiments across 13 challenging benchmarks in computational reasoning, knowledge reasoning, and deep search domains demonstrate ARPO's superiority over trajectory-level RL algorithms. Remarkably, ARPO achieves improved performance using only half of the tool-use budget required by existing methods, offering a scalable solution for aligning LLM-based agents with real-time dynamic environments.
@@ -145,7 +176,7 @@ Current AI agents cannot effectively learn from each other's problem-solving exp
 - RL: PPO
 - Base Model: Qwen2.5-7B
 - Benchmark: HotpotQA+NQ (Augmented); WebShop 
-- reward: Rule-based for QA; environment reward for WebShop 
+- Reward: Rule-based for QA; environment reward for WebShop 
 
 **TLDR**:  Modern language agents must operate over long-horizon, multi-turn interactions, where they retrieve external information, adapt to observations, and answer interdependent queries. Yet, most LLM systems rely on full-context prompting, appending all past turns regardless of their relevance. This leads to unbounded memory growth, increased computational costs, and degraded reasoning performance on out-of-distribution input lengths. We introduce MEM1, an end-to-end reinforcement learning framework that enables agents to operate with constant memory across long multi-turn tasks. At each turn, MEM1 updates a compact shared internal state that jointly supports memory consolidation and reasoning. This state integrates prior memory with new observations from the environment while strategically discarding irrelevant or redundant information. To support training in more realistic and compositional settings, we propose a simple yet effective and scalable approach to constructing multi-turn environments by composing existing datasets into arbitrarily complex task sequences. Experiments across three domains, including internal retrieval QA, open-domain web QA, and multi-turn web shopping, show that MEM1-7B improves performance by 3.5× while reducing memory usage by 3.7× compared to Qwen2.5-14B-Instruct on a 16-objective multi-hop QA task, and generalizes beyond the training horizon. Our results demonstrate the promise of reasoning-driven memory consolidation as a scalable alternative to existing solutions for training long-horizon interactive agents, where both efficiency and performance are optimized.
 </details>
@@ -209,7 +240,7 @@ Effective information searching is essential for enhancing the reasoning and gen
 - RL: GRPO
 - Base Model: Qwen2.5-7B-Instruct
 - Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based 
+- Reward: Rule-based 
 
 **TLDR**:  
 Large Language Models (LLMs) equipped with web search capabilities have demonstrated impressive potential for deep research tasks. However, current approaches predominantly rely on either manually engineered prompts (prompt engineering-based) with brittle performance or reinforcement learning within controlled Retrieval-Augmented Generation (RAG) environments (RAG-based) that fail to capture the complexities of real-world interaction. In this paper, we introduce DeepResearcher, the first comprehensive framework for end-to-end training of LLM-based deep research agents through scaling reinforcement learning (RL) in real-world environments with authentic web search interactions. Unlike RAG-based approaches that assume all necessary information exists within a fixed corpus, our method trains agents to navigate the noisy, unstructured, and dynamic nature of the open web. We implement a specialized multi-agent architecture where browsing agents extract relevant information from various webpage structures and overcoming significant technical challenges. Extensive experiments on open-domain research tasks demonstrate that DeepResearcher achieves substantial improvements of up to 28.9 points over prompt engineering-based baselines and up to 7.2 points over RAG-based RL agents. Our qualitative analysis reveals emergent cognitive behaviors from end-to-end RL training, including the ability to formulate plans, cross-validate information from multiple sources, engage in self-reflection to redirect research, and maintain honesty when unable to find definitive answers. Our results highlight that end-to-end training in real-world web environments is not merely an implementation detail but a fundamental requirement for developing robust research capabilities aligned with real-world applications.
@@ -228,7 +259,7 @@ Large Language Models (LLMs) equipped with web search capabilities have demonstr
 - RL: Online DPO
 - Base Model: QwQ-32B and DeepSeek-R1 distilled
 - Benchmark: GPQA, GAIA, WebWalkerQA, HLE. 
-- reward: Preferences built from reasoning correctness, tool usage, and final outputs.
+- Reward: Preferences built from reasoning correctness, tool usage, and final outputs.
 
 **TLDR**: Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate web pages, and draft research reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabling LRMs to dynamically search, navigate, and extract information from the web when encountering knowledge gaps. It also employs an Autonomous Think-Search-and-Draft strategy, allowing the model to seamlessly interleave reasoning, information gathering, and report writing in real time. To further enhance research tool utilization, we introduce an RL-based training strategy via iterative online Direct Preference Optimization (DPO). Extensive experiments on complex reasoning benchmarks (GPQA, GAIA, WebWalkerQA, HLE) and scientific report generation tasks (Glaive) demonstrate that WebThinker significantly outperforms existing methods and strong proprietary systems. Our approach enhances LRM reliability and applicability in complex scenarios, paving the way for more capable and versatile deep research systems. 
 </details>
@@ -243,7 +274,7 @@ Large Language Models (LLMs) equipped with web search capabilities have demonstr
 - RL: Iterative self-evolution with SFT and GRPO
 - Base Model: Qwen2.5-7B-Instruct
 - Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based 
+- Reward: Rule-based 
 
 **TLDR**:  
 The rapid advancement of large language models (LLMs) has transformed the landscape of agentic information seeking capabilities through the integration of tools such as search engines and web browsers. However, current mainstream approaches for enabling LLM web search proficiency face significant challenges: supervised fine-tuning struggles with data production in open-search domains, while RL converges quickly, limiting their data utilization efficiency. To address these issues, we propose EvolveSearch, a novel iterative self-evolution framework that combines SFT and RL to enhance agentic web search capabilities without any external human-annotated reasoning data. Extensive experiments on seven multi-hop question-answering (MHQA) benchmarks demonstrate that EvolveSearch consistently improves performance across iterations, ultimately achieving an average improvement of 4.7\% over the current state-of-the-art across seven benchmarks, opening the door to self-evolution agentic capabilities in open web search domains.
@@ -260,13 +291,49 @@ The rapid advancement of large language models (LLMs) has transformed the landsc
 - RL: GRPO, PPO
 - Base Model: Qwen-2.5-3B (Base/Instruct), Qwen-2.5-7B (Base/Instruct) 
 - Benchmark: Single-Hop QA, Multi-Hop QA
-- reward: Rule-based  
+- Reward: Rule-based  
 
 **TLDR**:  
 Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieval. Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function. Experiments on seven question-answering datasets show that Search-R1 improves performance by 41% (Qwen2.5-7B) and 20% (Qwen2.5-3B) over various RAG baselines under the same setting. This paper further provides empirical insights into RL optimization methods, LLM choices, and response length dynamics in retrieval-augmented reasoning. The code and model checkpoints are available at this https URL. 
 </details>
 
 ## GUI Agent
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2508.20096">CODA: Coordinating the Cerebrum and Cerebellum for a Dual-Brain Computer Use Agent with Decoupled Reinforcement Learning</a>
+  <a href="https://github.com/OpenIXCLab/CODA"><img src="https://img.shields.io/github/stars/OpenIXCLab/CODA?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Aug, 2025
+- Env: Computer  
+- RL: GRPO  
+- Base Model: Qwen2.5VL-32B, UI-TARS-1.5-7B
+- Benchmark: OSWorld
+- Novelty: Decomposing into Planner (Qwen2.5) and Executor (UI-TARS), and focusing on improving the planner with reinforcement learning. Proposing an auto Task Generation pipeline.
+- Reward: Model-based  
+
+**TLDR**:  
+We introduce ComputerRL, a framework for autonomous desktop intelligence that enables agents to operate complex digital workspaces skillfully. ComputerRL features the API-GUI paradigm, which unifies programmatic API calls and direct GUI interaction to address the inherent mismatch between machine agents and human-centric desktop environments. Scaling end-to-end RL training is crucial for improvement and generalization across diverse desktop tasks, yet remains challenging due to environmental inefficiency and instability in extended training. To support scalable and robust training, we develop a distributed RL infrastructure capable of orchestrating thousands of parallel virtual desktop environments to accelerate large-scale online RL. Furthermore, we propose Entropulse, a training strategy that alternates reinforcement learning with supervised fine-tuning, effectively mitigating entropy collapse during extended training runs. We employ ComputerRL on open models GLM-4-9B-0414 and Qwen2.5-14B, and evaluate them on the OSWorld benchmark. The AutoGLM-OS-9B based on GLM-4-9B-0414 achieves a new state-of-the-art accuracy of 48.1%, demonstrating significant improvements for general agents in desktop automation. The algorithm and framework are adopted in building AutoGLM (Liu et al., 2024a) 
+</details>
+
+<details>
+<summary>
+  <a href="https://arxiv.org/abs/2508.14040">SSRL: ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents
+</a>
+</summary>
+
+- Date: Aug, 2025
+- Env: Computer  
+- RL: GRPO  
+- Base Model: Qwen2.5-14B, GLM-4-9B-0414
+- Benchmark: OSWorld, OSWorld-Verified
+- Novelty: Automatically construct APIs and use them to interact with environments; A large-scale, distributed RL infrastructure for rollouts; and combine RL with SFT when entropy collapses during RL training.
+- Reward: Rule-based  
+
+**TLDR**:  
+We introduce ComputerRL, a framework for autonomous desktop intelligence that enables agents to operate complex digital workspaces skillfully. ComputerRL features the API-GUI paradigm, which unifies programmatic API calls and direct GUI interaction to address the inherent mismatch between machine agents and human-centric desktop environments. Scaling end-to-end RL training is crucial for improvement and generalization across diverse desktop tasks, yet remains challenging due to environmental inefficiency and instability in extended training. To support scalable and robust training, we develop a distributed RL infrastructure capable of orchestrating thousands of parallel virtual desktop environments to accelerate large-scale online RL. Furthermore, we propose Entropulse, a training strategy that alternates reinforcement learning with supervised fine-tuning, effectively mitigating entropy collapse during extended training runs. We employ ComputerRL on open models GLM-4-9B-0414 and Qwen2.5-14B, and evaluate them on the OSWorld benchmark. The AutoGLM-OS-9B based on GLM-4-9B-0414 achieves a new state-of-the-art accuracy of 48.1%, demonstrating significant improvements for general agents in desktop automation. The algorithm and framework are adopted in building AutoGLM (Liu et al., 2024a) 
+</details>
 
 <details>
 <summary>
@@ -339,7 +406,7 @@ Vision-language models have demonstrated impressive capabilities as computer-use
 - RL: GRPO  
 - Base Model: UI-TARS-7B-DPO  
 - Benchmark: OSWorld  
-- reward: Model-based  
+- Reward: Model-based  
 
 **TLDR**:  
 Repurposing large vision-language models (LVLMs) as computer use agents (CUAs) has led to substantial breakthroughs, primarily driven by human-labeled data. However, these models often struggle with novel and specialized software, particularly in scenarios lacking human annotations. To address this challenge, we propose SEAgent, an agentic self-evolving framework enabling CUAs to autonomously evolve through interactions with unfamiliar software. Specifically, SEAgent empowers computer-use agents to autonomously master novel software environments via experiential learning, where agents explore new software, learn through iterative trial-and-error, and progressively tackle auto-generated tasks organized from simple to complex. To achieve this goal, we design a World State Model for step-wise trajectory assessment, along with a Curriculum Generator that generates increasingly diverse and challenging tasks. The agent's policy is updated through experiential learning, comprised of adversarial imitation of failure actions and Group Relative Policy Optimization (GRPO) on successful ones. Furthermore, we introduce a specialist-to-generalist training strategy that integrates individual experiential insights from specialist agents, facilitating the development of a stronger generalist CUA capable of continuous autonomous evolution. This unified agent ultimately achieves performance surpassing ensembles of individual specialist agents on their specialized software. We validate the effectiveness of SEAgent across five novel software environments within OS-World. Our approach achieves a significant improvement of 23.2% in success rate, from 11.3% to 34.5%, over a competitive open-source CUA, i.e., UI-TARS.  
