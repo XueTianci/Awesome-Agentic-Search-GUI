@@ -18,6 +18,24 @@ Agentic Search / Deep Research – AI agents that autonomously plan, reason, and
 
 <details>
 <summary>
+  <a href="https://arxiv.org/abs/2508.20404">AWorld: Orchestrating the Training Recipe for Agentic AI</a>
+  <a href="https://github.com/inclusionAI/AWorld/"><img src="https://img.shields.io/github/stars/inclusionAI/AWorld?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Sep, 2025
+- Env: API  
+- RL: GRPO  
+- Base Model: Qwen3-32B-Base 
+- Benchmark: GAIA
+- Novelty: A unified interface for model integration, supporting flexible configuration of target models; High-concurrency support, and encapsulates communication protocols between models and tools.
+- Reward: Rule-based  
+
+**TLDR**:  
+The learning from practice paradigm is crucial for developing capable Agentic AI systems, yet it is severely hampered by inefficient experience generation, a bottleneck especially pronounced in complex benchmarks like GAIA. To address this, we introduce AWorld, an open-source system engineered for large-scale agent-environment interaction. By distributing tasks across a cluster, AWorld accelerates experience collection by 14.6x compared to standard single-node, sequential execution. This critical speedup makes extensive reinforcement learning practical and scalable. Leveraging this capability, we trained a Qwen3-32B-based agent that achieves pass@1 accuracy of 32.23% on the GAIA test set, which surpasses GPT-4o (27.91%) and rivals DeepSeek-V3 (31.89%). Our open-source system and the resulting agent provide a practical blueprint for a complete agentic AI training pipeline, from efficient interaction to demonstrable model improvement.
+</details>
+
+<details>
+<summary>
   <a href="https://arxiv.org/abs/2509.02547v1">The Landscape of Agentic Reinforcement Learning for LLMs: A Survey</a>
 </summary>
 
@@ -301,6 +319,24 @@ Efficiently acquiring external knowledge and up-to-date information is essential
 
 <details>
 <summary>
+  <a href="https://arxiv.org/abs/2509.02544">UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning</a>
+  <a href="https://github.com/bytedance/ui-tars"><img src="https://img.shields.io/github/stars/bytedance/ui-tars?style=social" alt="GitHub Stars"/></a>
+</summary>
+
+- Date: Sep, 2025
+- Env: Computer  
+- RL: PPO, GRPO  
+- Base Model: Seed-thinking-1.6
+- Benchmark: OSWorld, WindowsAgentArena, Terminal Bench, SWE-Bench, AndroidWorld, Online-Mind2web, BrowseComp
+- Novelty: Incorporating memory module(Working Memory and Episodic Memory); All-in-One GUI Sandbox; Merging Vertical Agents via Parameter Interpolation; An iterative training process (Pretrain–SFT–RL) leveraging RL rollouts.
+- Reward: Rule-based and self-reward  
+
+**TLDR**:  
+The development of autonomous agents for graphical user interfaces (GUIs) presents major challenges in artificial intelligence. While recent advances in native agent models have shown promise by unifying perception, reasoning, action, and memory through end-to-end learning, open problems remain in data scalability, multi-turn reinforcement learning (RL), the limitations of GUI-only operation, and environment stability. In this technical report, we present UI-TARS-2, a native GUI-centered agent model that addresses these challenges through a systematic training methodology: a data flywheel for scalable data generation, a stabilized multi-turn RL framework, a hybrid GUI environment that integrates file systems and terminals, and a unified sandbox platform for large-scale rollouts. Empirical evaluation demonstrates that UI-TARS-2 achieves significant improvements over its predecessor UI-TARS-1.5. On GUI benchmarks, it reaches 88.2 on Online-Mind2Web, 47.5 on OSWorld, 50.6 on WindowsAgentArena, and 73.3 on AndroidWorld, outperforming strong baselines such as Claude and OpenAI agents. In game environments, it attains a mean normalized score of 59.8 across a 15-game suite-roughly 60% of human-level performance-and remains competitive with frontier proprietary models (e.g., OpenAI o3) on LMGame-Bench. Additionally, the model can generalize to long-horizon information-seeking tasks and software engineering benchmarks, highlighting its robustness across diverse agent tasks. Detailed analyses of training dynamics further provide insights into achieving stability and efficiency in large-scale agent RL. These results underscore UI-TARS-2's potential to advance the state of GUI agents and exhibit strong generalization to real-world interactive scenarios. 
+</details>
+
+<details>
+<summary>
   <a href="https://arxiv.org/abs/2508.20096">CODA: Coordinating the Cerebrum and Cerebellum for a Dual-Brain Computer Use Agent with Decoupled Reinforcement Learning</a>
   <a href="https://github.com/OpenIXCLab/CODA"><img src="https://img.shields.io/github/stars/OpenIXCLab/CODA?style=social" alt="GitHub Stars"/></a>
 </summary>
@@ -310,7 +346,7 @@ Efficiently acquiring external knowledge and up-to-date information is essential
 - RL: GRPO  
 - Base Model: Qwen2.5VL-32B, UI-TARS-1.5-7B
 - Benchmark: OSWorld
-- Novelty: Decomposing into Planner (Qwen2.5) and Executor (UI-TARS), and focusing on improving the planner with reinforcement learning. Proposing an auto Task Generation pipeline.
+- Novelty: Decomposing into planner (Qwen2.5) and executor (UI-TARS), and focusing on improving the planner with RL. Proposing an auto task generation pipeline.
 - Reward: Model-based  
 
 **TLDR**:  
